@@ -8,8 +8,9 @@ const Navbar = () => {
 
   return (
     <nav>
-      <Link to={routes.home}><h4 className='link'>Home</h4></Link>
-      <Link to={routes.favs}><h4 className='link'>Favs</h4></Link>
+      <Link to={routes.home}><a className='link'>Home</a></Link>
+      <Link to={routes.favs}><a className='link'>Favs</a></Link>
+      <Link to={routes.contact} ><a className='link'>Contacto</a></Link>
       <button>Change theme</button>
     </nav>
   )
