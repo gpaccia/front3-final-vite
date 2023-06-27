@@ -13,7 +13,7 @@ const Home = () => {
     <main className="" >
       <h1>Home</h1>
       <div className='card-grid'>
-          {odontologos.map(odontologo => <li key={odontologo.id}><Card key={odontologo.id} name={odontologo.name} username={odontologo.username}/></li>)}
+          {odontologos.map(odontologo => <li style={{"listStyle": "none"}} key={odontologo.id}><Card name={odontologo.name} username={odontologo.username} /></li>)}
       </div>
     </main>
   )

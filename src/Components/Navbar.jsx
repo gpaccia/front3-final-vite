@@ -8,9 +8,9 @@ const Navbar = () => {
 
   return (
     <nav>
-      <Link to={routes.home}><a className='link'>Home</a></Link>
-      <Link to={routes.favs}><a className='link'>Favs</a></Link>
-      <Link to={routes.contact} ><a className='link'>Contacto</a></Link>
+      <Link to={routes.home}><h2 className='link'>Home</h2></Link>
+      <Link to={routes.favs}><h2 className='link'>Favs</h2></Link>
+      <Link to={routes.contact} ><h2 className='link'>Contacto</h2></Link>
       <button>Change theme</button>
     </nav>
   )
