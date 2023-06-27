@@ -2,9 +2,9 @@ import React from 'react'
 
 export const favsReducer = (state, action) => {
   switch(action.type){
-    case 'ADD-FAV':
+    case 'ADD_FAV':
         return [...state, action.payload]
-    case 'REMOVE-FAV':
+    case 'REMOVE_FAV':
         const index = state.indexOf(action.payload)
         state.splice(index)
         return state

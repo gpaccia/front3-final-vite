@@ -4,28 +4,28 @@ import axios from "axios";
 
 export const initialState = {theme: "", data: []}
 
-export const ContextGlobal = createContext();
+export const GlobalContext = createContext();
 
 export const Context = ({ children }) => {
 
   const [favs, dispatchFavs] = useReducer(favsReducer, [])
   const [odontologos, setOdontologos] = useState([])
 
-  const dentistURL = 'https://jsonplaceholder.typicode.com/users'
+  const dentistsURL = 'https://jsonplaceholder.typicode.com/users'
 
   useEffect(() => {
-    axios(dentistURL).then((res) => setOdontologos(res.data))
+    axios(dentistsURL).then((res) => setOdontologos(res.data))
   }, [])
   
   return (
-    <ContextGlobal.Provider value={{odontologos}}>
+    <GlobalContext.Provider value={{odontologos}}>
       {children}
-    </ContextGlobal.Provider>
+    </GlobalContext.Provider>
   );
 };
 
 export default Context
 
 export const useGlobalContext = () => {
-  return useContext(ContextGlobal)
+  return useContext(GlobalContext)
 }

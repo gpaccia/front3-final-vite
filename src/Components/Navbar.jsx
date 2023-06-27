@@ -8,10 +8,16 @@ const Navbar = () => {
 
   return (
     <nav>
-      <Link to={routes.home}><h2 className='link'>Home</h2></Link>
-      <Link to={routes.favs}><h2 className='link'>Favs</h2></Link>
-      <Link to={routes.contact} ><h2 className='link'>Contacto</h2></Link>
-      <button>Change theme</button>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
+        <img src="../DH.ico" alt="DH-ico"/>
+        <strong style={{ marginLeft: '5px' }}>ODONTO</strong>
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
+        <Link to={routes.home} style={{ marginRight: '20px' }}> <h2>Home</h2></Link>
+        <Link to={routes.favs} style={{ marginRight: '20px' }}> <h2>Favs</h2></Link>
+        <Link to={routes.contact} style={{ marginRight: '20px' }}> <h2>Contacto</h2></Link>
+        <button style={{ marginRight: '20px' }}>Cambiar tema</button>
+      </div>
     </nav>
   )
 }
