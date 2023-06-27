@@ -1,22 +1,30 @@
-import { createContext, useContext, useReducer, useState } from "react";
+import { createContext, useContext, useEffect, useReducer, useState } from "react";
+import { favsReducer } from "./favsReducer";
+import axios from "axios";
 
 export const initialState = {theme: "", data: []}
 
-export const ContextGlobal = createContext(undefined);
+export const ContextGlobal = createContext();
 
-export const ContextProvider = ({ children }) => {
+export const Context = ({ children }) => {
 
-  const [favs, dispach] = useReducer(favsReducer, [])
+  const [favs, dispatchFavs] = useReducer(favsReducer, [])
   const [odontologos, setOdontologos] = useState([])
+
+  const dentistURL = 'https://jsonplaceholder.typicode.com/users'
+
+  useEffect(() => {
+    axios(dentistURL).then((res) => setOdontologos(res.data))
+  }, [])
   
   return (
-    <ContextGlobal.Provider value={{odontologos, setOdontologos}}>
+    <ContextGlobal.Provider value={{odontologos}}>
       {children}
     </ContextGlobal.Provider>
   );
 };
 
-export default ContextProvider
+export default Context
 
 export const useGlobalContext = () => {
   return useContext(ContextGlobal)
