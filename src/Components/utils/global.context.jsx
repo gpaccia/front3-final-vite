@@ -2,15 +2,14 @@ import { createContext, useContext, useEffect, useReducer, useState } from "reac
 import { odontologosReducer } from "./odontologosReducer";
 import axios from "axios";
 
-export const initialState = {theme: "", data: []}
-
 export const GlobalContext = createContext();
 
 export const Context = ({ children }) => {
 
   const initialState = {
     listaOdontologos: [],
-    favs: JSON.parse(localStorage.getItem('favs')) || []
+    favs: JSON.parse(localStorage.getItem('favs')) || [],
+    theme: ''
   }
 
   const [odontologos, dispatchOdontologos] = useReducer(odontologosReducer, initialState)

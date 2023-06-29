@@ -1,7 +1,6 @@
 import { React, useEffect, useState } from "react";
 import { useGlobalContext } from "./utils/global.context";
 import { Link } from "react-router-dom";
-import {routes} from "./utils/routes";
 
 const Card = (props) => {
   const { odontologo, image } = props
@@ -25,14 +24,14 @@ const Card = (props) => {
   }
 
   return (
-    <div className="card">
+    <div className='card'>
       <img src={image} style={{ width: '100%' }} alt="Doc image" />
       <Link to={'/dentist/' + odontologo.id}><h4>{`${odontologo.name}`}</h4></Link>
       <p>{`${odontologo.username}`}</p>
       {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
 
       {/* Ademas deberan integrar la logica para guard en el localStorage */}
-      <button onClick={addFav} className={isFav()?"removeButton":"favButton"}>{isFav() ? "remove fav":"add fav"}</button>
+      <button onClick={addFav} className={isFav()?"removeButton":"favButton"}>{isFav() ? "Remover favorito":"Agregar favorito"}</button>
     </div>
   );
 };

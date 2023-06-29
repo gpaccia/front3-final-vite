@@ -12,6 +12,8 @@ export const odontologosReducer = (state, action) => {
       return {...state, favs: state.favs}
     case 'POPULATE_LIST':
       return { ...state, listaOdontologos: action.payload }
+    case 'CHANGE_THEME':
+      return { ...state, theme: action.payload };
     default:
       throw new Error()
   }
