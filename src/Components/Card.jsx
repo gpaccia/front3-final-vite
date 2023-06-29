@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const Card = (props) => {
   const { odontologo, image } = props
   const { odontologos, dispatchOdontologos } = useGlobalContext()
-  const odontoURL = "https://jsonplaceholder.typicode.com/users/" + odontologo.id
 
   const addFav = () => {
     if (isFav()) {
