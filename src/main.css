@@ -132,3 +132,9 @@ tr:nth-child(even) {
   border-radius: 10%;
   border-color: black;
 }
+
+.odontoContainer{
+  display: flex;
+  align-items:center;
+  justify-content:space-evenly;
+}
