@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useReducer, useState } from "react";
-import { favsReducer } from "./favsReducer";
+import { odontologosReducer } from "./odontologosReducer";
 import axios from "axios";
 
 export const initialState = {theme: "", data: []}
@@ -8,17 +8,26 @@ export const GlobalContext = createContext();
 
 export const Context = ({ children }) => {
 
-  const [favs, dispatchFavs] = useReducer(favsReducer, [])
-  const [odontologos, setOdontologos] = useState([])
+  const initialState = {
+    listaOdontologos: [],
+    favs: JSON.parse(localStorage.getItem('favs')) || []
+  }
+
+  const [odontologos, dispatchOdontologos] = useReducer(odontologosReducer, initialState)
 
   const dentistsURL = 'https://jsonplaceholder.typicode.com/users'
 
   useEffect(() => {
-    axios(dentistsURL).then((res) => setOdontologos(res.data))
-  }, [])
+    axios(dentistsURL).then((res) => dispatchOdontologos({type:'POPULATE_LIST', payload: res.data}))
+    }, [])
+
+    useEffect(() => {
+      localStorage.removeItem('favs');
+      localStorage.setItem('favs', JSON.stringify(odontologos.favs))
+  }, [odontologos])
   
   return (
-    <GlobalContext.Provider value={{odontologos}}>
+    <GlobalContext.Provider value={{odontologos, dispatchOdontologos}}>
       {children}
     </GlobalContext.Provider>
   );
