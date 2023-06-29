@@ -11,22 +11,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.favButton{
-  background-color: rgba(136, 136, 136, 0.116);
-  padding: 10px;
-  margin: 10px;
-  border: none;
-  width: 100%;
-  cursor: pointer;
-}
-.removeButton{
-  background-color: rgba(255, 67, 67, 0.116);
-  padding: 10px;
-  margin: 10px;
-  border: none;
-  width: 100%;
-  cursor: pointer;
-}
 
 h1{
   text-align: center;
@@ -34,9 +18,9 @@ h1{
 
 nav{
   display: flex;
-  justify-content: space-between;
+  width: 80vw;
+  justify-content: flex-start;
   padding: 1rem;
-  
 }
 
 a{
@@ -51,16 +35,20 @@ a:hover{
 
 footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
   padding: 2rem;
   position: relative;
   bottom: 0;
+  width: 90%;
   height: 40px;
   margin-top: 2rem;
 }
 
-
+footer > img{
+  width: 200px;
+  margin: 0;
+}
 footer > p{
   margin: 0;
   padding-top: 0.7rem;
@@ -124,11 +112,4 @@ tr:nth-child(even) {
 }
 .dark > a {
   color: white;
-}
-
-.ico {
-  background-color: black;
-  margin-right: 20px;
-  border-radius: 10%;
-  border-color: black;
 }

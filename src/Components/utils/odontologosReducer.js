@@ -7,10 +7,9 @@ export const odontologosReducer = (state, action) => {
     case 'REMOVE_FAV':
       const index = state.favs.indexOf(action.payload)
       if (index !== -1) {
-        console.log(index)
         state.favs.splice(index, 1)
       }
-      return state
+      return {...state, favs: state.favs}
     case 'POPULATE_LIST':
       return { ...state, listaOdontologos: action.payload }
     default:

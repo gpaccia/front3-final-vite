@@ -22,7 +22,6 @@ export const Context = ({ children }) => {
     }, [])
 
     useEffect(() => {
-      localStorage.removeItem('favs');
       localStorage.setItem('favs', JSON.stringify(odontologos.favs))
   }, [odontologos])
   

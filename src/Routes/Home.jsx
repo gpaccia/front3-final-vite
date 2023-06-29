@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Card from '../Components/Card'
 import { useGlobalContext } from '../Components/utils/global.context'
 import "../main.css"
@@ -8,6 +8,7 @@ import "../main.css"
 const Home = () => {
 
   const { odontologos } = useGlobalContext()
+  useEffect(() => console.log("recarga"), [odontologos])
 
   return (
     <main className="" >
