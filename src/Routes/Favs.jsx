@@ -8,7 +8,7 @@ const Favs = () => {
 const {odontologos} = useGlobalContext()
   return (
     <>
-      <h1>Dentists Favs</h1>
+      <h1>Odontólogos favoritos</h1>
       <div className="card-grid">
         {odontologos.favs.map(odontologo => <li style={{"listStyle": "none"}} key={odontologo.id}>
             <Card 
