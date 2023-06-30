@@ -15,7 +15,7 @@ const Detail = () => {
   console.log(dentist)
   return (
     <>
-      <h1>Detail Dentist</h1>
+      <h1>Detalle del odontólogo</h1>
       <div className='odontoContainer'>
         <div>
           <h3>{dentist.name}</h3>
