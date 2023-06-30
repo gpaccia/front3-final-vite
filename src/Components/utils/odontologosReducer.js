@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const odontologosReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_FAV':
